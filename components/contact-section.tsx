@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -28,7 +26,8 @@ export default function ContactSection() {
     setSubmitStatus("idle")
 
     try {
-      const response = await fetch("https://formspree.io/f/your-form-id", {
+      // Replace YOUR_FORM_ID with your actual Formspree form ID
+      const response = await fetch("https://formspree.io/f/movloqav", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -193,19 +192,6 @@ export default function ContactSection() {
                     <p className="text-gray-600">
                       {contact.city}, {contact.country}
                     </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-lg border-0">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <MapPin className="h-6 w-6 text-brand-bright-blue mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-brand-deep-blue mb-1">We Serve In</h3>
-                    <p className="text-gray-600">{contact.serviceAreas.join(" • ")}</p>
-                    <p className="text-gray-600">Global remote services available</p>
                   </div>
                 </div>
               </CardContent>
