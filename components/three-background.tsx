@@ -65,10 +65,12 @@ export default function VideoBackground() {
         loop
         muted
         playsInline
-        src="/GettyImages-636463142.mov" // replace with your 4K video path
+        src="https://www.dropbox.com/scl/fi/r7ohwlnvrjrusarxctcd7/GettyImages-636463142.mov?rlkey=cwcrw8ybgdhosx5fn8sojvf1s&st=4fvcnga7&dl=0" // replace with your 4K video path
       />
       {/* Optional overlay for darkening or effects */}
       <div className="absolute inset-0 bg-black/30" />
     </div>
   )
 }
+
+// https://www.dropbox.com/scl/fi/r7ohwlnvrjrusarxctcd7/GettyImages-636463142.mov?rlkey=cwcrw8ybgdhosx5fn8sojvf1s&st=4fvcnga7&dl=0
