@@ -110,7 +110,7 @@ const defaultData: WebsiteData = {
     description:
       "We specialize in creating innovative digital solutions that drive growth and success. From web development to AI integration, we're your trusted technology partner.",
     primaryButtonText: "Book a Call",
-    primaryButtonLink: "https://calendly.com/varshait-infotech",
+    primaryButtonLink: "https://calendly.com/macgw86/30min",
     secondaryButtonText: "Our Work",
     secondaryButtonLink: "#work",
   },
@@ -258,7 +258,7 @@ const defaultData: WebsiteData = {
     discount: "30%",
     validUntil: "2024-03-31",
     buttonText: "Claim Offer",
-    buttonLink: "https://calendly.com/varshait-infotech",
+    buttonLink: "https://calendly.com/macgw86/30min",
     active: true,
   },
   contact: {

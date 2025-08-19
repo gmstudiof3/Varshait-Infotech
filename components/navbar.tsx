@@ -82,7 +82,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Button
               className="brand-bright-blue hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-200"
-              onClick={() => window.open("https://calendly.com/varshait-infotech", "_blank")}
+              onClick={() => window.open("https://calendly.com/macgw86/30min", "_blank")}
             >
               Book a Call
             </Button>
@@ -115,7 +115,7 @@ export default function Navbar() {
               ))}
               <Button
                 className="brand-bright-blue hover:bg-blue-600 text-white font-semibold w-full mt-4"
-                onClick={() => window.open("https://calendly.com/varshait-infotech", "_blank")}
+                onClick={() => window.open("https://calendly.com/macgw86/30min", "_blank")}
               >
                 Book a Call
               </Button>
