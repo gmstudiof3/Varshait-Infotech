@@ -7,12 +7,12 @@ import WorkSection from "@/components/work-section"
 import IndustriesSection from "@/components/industries-section"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
-import ThreeBackground from "@/components/three-background"
+import VideoBackground from "@/components/video-background"
 
 export default function Home() {
   return (
     <main className="min-h-screen relative">
-      <ThreeBackground />
+      <VideoBackground />
       <div className="relative z-10">
         <Navbar />
         <HeroSection />

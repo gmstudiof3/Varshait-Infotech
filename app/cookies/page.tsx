@@ -1,11 +1,11 @@
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import ThreeBackground from "@/components/three-background"
+import VideoBackground from "@/components/video-background"
 
 export default function CookiePolicy() {
   return (
     <main className="min-h-screen relative">
-      <ThreeBackground />
+      <VideoBackground />
       <div className="relative z-10">
         <Navbar />
         <div className="pt-20 pb-16 bg-white/90 backdrop-blur-sm">

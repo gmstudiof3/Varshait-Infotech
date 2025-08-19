@@ -122,37 +122,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* Added custom brand colors and smooth scroll */
-.brand-deep-blue {
-  background-color: #002b5b;
-}
-
-.brand-bright-blue {
-  background-color: #00aeef;
-}
-
-.text-brand-deep-blue {
-  color: #002b5b;
-}
-
-.text-brand-bright-blue {
-  color: #00aeef;
-}
-
-.border-brand-bright-blue {
-  border-color: #00aeef;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.gradient-hero {
-  background: linear-gradient(135deg, #002b5b 0%, #004080 50%, #00aeef 100%);
-}
-
-.tech-pattern {
-  background-image: radial-gradient(circle at 25% 25%, rgba(0, 174, 239, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(0, 43, 91, 0.1) 0%, transparent 50%);
-}

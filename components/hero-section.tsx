@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, TrendingUp } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { useWebsiteData } from "@/lib/data-manager"
 
 export default function HeroSection() {
@@ -44,54 +44,35 @@ export default function HeroSection() {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="text-white">
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-lg">
-              <span>{heroData.title.replace(heroData.subtitle, "")}</span>
-              <span className="text-brand-bright-blue drop-shadow-lg">{heroData.subtitle}</span>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div className="space-y-12">
+          {/* Main Heading */}
+          <div className="space-y-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white tracking-tight">
+              <div className="mb-2 sm:mb-4">Transforming Web Design</div>
+              <div className="mb-2 sm:mb-4">With The</div>
+              <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent font-extrabold">
+                Power Of AI
+              </div>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-100 leading-relaxed drop-shadow">{heroData.description}</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-brand-bright-blue hover:bg-blue-600 text-white font-semibold px-8 py-4 text-lg shadow-xl"
-                onClick={handlePrimaryButton}
-              >
-                {heroData.primaryButtonText}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-brand-deep-blue px-8 py-4 text-lg bg-white/10 backdrop-blur-sm shadow-xl hover:border-white"
-                onClick={handleSecondaryButton}
-              >
-                {heroData.secondaryButtonText}
-              </Button>
-            </div>
+
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-normal px-4">
+              Partner with the best web design company in India and embrace the possibilities of tomorrow—today. Let's
+              build something remarkable together.
+            </p>
           </div>
 
-          {/* Image/Illustration */}
-          <div className="relative">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 shadow-2xl">
-              <img
-                src="/business-growth-dashboard.png"
-                alt="Business Growth and Technology Integration"
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-            <div className="absolute -bottom-6 -right-6 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-xl">
-              <div className="flex items-center gap-3">
-                <TrendingUp className="h-8 w-8 text-green-500" />
-                <div>
-                  <p className="text-sm text-gray-600">Growth Rate</p>
-                  <p className="text-2xl font-bold text-brand-deep-blue">+300%</p>
-                </div>
-              </div>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-8">
+            <Button
+              size="lg"
+              className="bg-white text-black hover:bg-gray-100 font-semibold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2 sm:gap-3 min-w-[200px]"
+              onClick={handlePrimaryButton}
+            >
+              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
+              Schedule a call
+            </Button>
           </div>
         </div>
       </div>

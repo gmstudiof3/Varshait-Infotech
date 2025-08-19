@@ -440,7 +440,7 @@ For questions about our Cookie Policy:
                             calendly: e.target.value,
                           })
                         }
-                        placeholder="https://calendly.com/macgw86/30min"
+                        placeholder="https://calendly.com/your-username/meeting"
                       />
                       <p className="text-xs text-gray-500 mt-1">
                         This URL will be used for all "Book a Call" buttons across the website
