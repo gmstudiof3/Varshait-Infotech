@@ -195,7 +195,7 @@ For questions about our Cookie Policy:
 
   // Integration Settings
   const [integrationSettings, setIntegrationSettings] = useState({
-    calendly: "https://calendly.com/varshait/consultation",
+    calendly: "https://calendly.com/macgw86/30min",
     socialMedia: {
       linkedin: "https://linkedin.com/company/varshait-infotech",
       twitter: "https://twitter.com/varshaitinfo",
@@ -440,7 +440,7 @@ For questions about our Cookie Policy:
                             calendly: e.target.value,
                           })
                         }
-                        placeholder="https://calendly.com/your-username/meeting"
+                        placeholder="https://calendly.com/macgw86/30min"
                       />
                       <p className="text-xs text-gray-500 mt-1">
                         This URL will be used for all "Book a Call" buttons across the website
