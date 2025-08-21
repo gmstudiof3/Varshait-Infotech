@@ -11,10 +11,7 @@ export default function HeroSection() {
   const scrollToWork = () => {
     const workSection = document.getElementById("work")
     if (workSection) {
-      workSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
+      workSection.scrollIntoView({ behavior: "smooth", block: "start" })
     }
   }
 
@@ -22,57 +19,47 @@ export default function HeroSection() {
     if (heroData.primaryButtonLink.startsWith("http")) {
       window.open(heroData.primaryButtonLink, "_blank")
     } else {
-      // Handle internal links
       const element = document.querySelector(heroData.primaryButtonLink)
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" })
-      }
-    }
-  }
-
-  const handleSecondaryButton = () => {
-    if (heroData.secondaryButtonLink.startsWith("http")) {
-      window.open(heroData.secondaryButtonLink, "_blank")
-    } else if (heroData.secondaryButtonLink.startsWith("#")) {
-      const element = document.querySelector(heroData.secondaryButtonLink)
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" })
-      }
-    } else {
-      scrollToWork()
+      if (element) element.scrollIntoView({ behavior: "smooth" })
     }
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <div className="space-y-12">
-          {/* Main Heading */}
-          <div className="space-y-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white tracking-tight">
-              <div className="mb-2 sm:mb-4">Your Business, Our Smart Solution.</div>
-              <div className="mb-2 sm:mb-4">With The</div>
-              <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent font-extrabold">
-                Varshait Infotech
-              </div>
-            </h1>
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden py-20 text-center"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Main Heading */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-white">
+          <span className="block mb-4">We Build Technology</span>
+          <span className="block text-[#06B6D4]">That Grows Your Business</span>
+        </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-normal px-4">
-              From custom websites to AI automation — we create technology that drives real results.
-            </p>
-          </div>
+        <p className="mt-6 text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          With over <span className="font-semibold text-white">10+ years of expertise</span> and{" "}
+          <span className="font-semibold text-white">200+ successful projects</span>, Varshait Infotech helps companies
+          scale faster through modern web, mobile, and AI-powered solutions.
+        </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-8">
-            <Button
-              size="lg"
-              className="bg-white text-black hover:bg-gray-100 font-semibold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2 sm:gap-3 min-w-[200px]"
-              onClick={handlePrimaryButton}
-            >
-              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
-              Schedule a call
-            </Button>
-          </div>
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-10">
+          <Button
+            size="lg"
+            className="bg-[#06B6D4] hover:bg-cyan-600 text-white font-semibold px-8 py-4 rounded-full shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3 min-w-[220px]"
+            onClick={handlePrimaryButton}
+          >
+            Schedule a Free Call
+            <ArrowRight className="h-5 w-5" />
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white text-white hover:bg-white/20 font-semibold px-8 py-4 rounded-full transition-all duration-300 min-w-[220px]"
+            onClick={scrollToWork}
+          >
+            View Our Work
+          </Button>
         </div>
       </div>
     </section>
