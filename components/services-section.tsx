@@ -1,16 +1,52 @@
 "use client"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Globe, Bot, ShoppingCart, TrendingUp, Video } from "lucide-react"
+import { Globe, Bot, ShoppingCart, TrendingUp, Video, Smartphone } from "lucide-react"
 import { useWebsiteData } from "@/lib/data-manager"
 
 export default function ServicesSection() {
   const data = useWebsiteData()
-  const services = data.services
+  const services = [
+    {
+      id: 1,
+      icon: "🌐",
+      name: "Web Development",
+      description: "Custom websites and apps designed to attract customers and grow your business.",
+      features: ["SEO Optimized", "Fast Loading", "Responsive Design", "Secure Hosting"],
+    },
+    {
+      id: 2,
+      icon: "📱",
+      name: "Mobile App Development",
+      description: "iOS and Android apps built for seamless performance and user experience.",
+      features: ["Cross-Platform", "Native Performance", "App Store Ready", "User-Friendly"],
+    },
+    {
+      id: 3,
+      icon: "🤖",
+      name: "AI Integration",
+      description: "Smart AI-powered tools that save time, cut costs, and scale your business.",
+      features: ["Chatbots & Automation", "Predictive Analytics", "Machine Learning", "Computer Vision"],
+    },
+    {
+      id: 4,
+      icon: "🎬",
+      name: "Video Editing",
+      description: "Professional editing and motion graphics to boost your brand storytelling.",
+      features: ["Cinematic Editing", "Motion Graphics", "Color Grading", "Audio Enhancement"],
+    },
+    {
+      id: 5,
+      icon: "📈",
+      name: "Digital Growth",
+      description: "Data-driven strategies to get more traffic, leads, and conversions.",
+      features: ["SEO Strategy", "Paid Ads", "Social Media Growth", "Conversion Optimization"],
+    },
+  ]
 
   // Icon mapping for dynamic services
   const iconMap: { [key: string]: any } = {
     "🌐": Globe,
-    "📱": Bot,
+    "📱": Smartphone,
     "🤖": Bot,
     "🎬": Video,
     "🛒": ShoppingCart,
@@ -23,13 +59,12 @@ export default function ServicesSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-deep-blue mb-4">Our Services</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive technology solutions designed to accelerate your business growth and digital transformation
-            journey.
+            Smart, customizable solutions to help your business attract customers, increase sales, and grow faster.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const IconComponent = iconMap[service.icon] || Globe
             return (
               <Card
