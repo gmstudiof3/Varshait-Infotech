@@ -1,6 +1,6 @@
 "use client"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Code2, Smartphone, BrainCircuit, Clapperboard, TrendingUp } from "lucide-react"
+import { MonitorSmartphone, Smartphone, Bot, Clapperboard, LineChart } from "lucide-react"
 import { useWebsiteData } from "@/lib/data-manager"
 
 export default function ServicesSection() {
@@ -9,37 +9,37 @@ export default function ServicesSection() {
   const services = [
     {
       id: 1,
-      icon: Code2, // precise for web/dev
+      icon: MonitorSmartphone,
       name: "Web Development",
-      description: "Custom websites and apps designed to attract customers and grow your business.",
+      description: "Custom websites and web apps designed to attract customers and scale your business.",
       features: ["SEO Optimized", "Fast Loading", "Responsive Design", "Secure Hosting"],
     },
     {
       id: 2,
-      icon: Smartphone, // mobile-specific
+      icon: Smartphone,
       name: "Mobile App Development",
-      description: "iOS and Android apps built for seamless performance and user experience.",
+      description: "iOS and Android apps built for seamless performance and intuitive user experience.",
       features: ["Cross-Platform", "Native Performance", "App Store Ready", "User-Friendly"],
     },
     {
       id: 3,
-      icon: BrainCircuit, // AI/automation
+      icon: Bot,
       name: "AI Integration",
-      description: "Smart AI-powered tools that save time, cut costs, and scale your business.",
+      description: "AI-powered tools that automate tasks, cut costs, and boost business intelligence.",
       features: ["Chatbots & Automation", "Predictive Analytics", "Machine Learning", "Computer Vision"],
     },
     {
       id: 4,
-      icon: Clapperboard, // video editing
+      icon: Clapperboard,
       name: "Video Editing",
-      description: "Professional editing and motion graphics to boost your brand storytelling.",
+      description: "Professional editing and motion graphics to enhance your brand storytelling.",
       features: ["Cinematic Editing", "Motion Graphics", "Color Grading", "Audio Enhancement"],
     },
     {
       id: 5,
-      icon: TrendingUp, // growth/performance
+      icon: LineChart,
       name: "Digital Growth",
-      description: "Data-driven strategies to get more traffic, leads, and conversions.",
+      description: "Data-driven strategies to generate more traffic, leads, and conversions.",
       features: ["SEO Strategy", "Paid Ads", "Social Media Growth", "Conversion Optimization"],
     },
   ]
