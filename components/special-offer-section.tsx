@@ -43,15 +43,12 @@ export default function SpecialOfferSection() {
               </div>
             </div>
 
-            {/* Updated Title */}
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              {offer.title || "Exclusive Offer"} — {offer.discount || "Free Consultation"}
+              {offer.title} — {offer.discount} Off
             </h2>
 
-            {/* Updated Description */}
             <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-              {offer.description ||
-                "Kickstart your digital transformation journey with a free strategy call and personalized solutions tailored for your business growth."}
+              {offer.description}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -60,12 +57,13 @@ export default function SpecialOfferSection() {
                 className="bg-white text-brand-deep-blue hover:bg-gray-100 font-bold px-8 py-4 text-lg shadow-xl transition-all duration-300 hover:scale-105"
                 onClick={handleOfferClick}
               >
-                {offer.buttonText || "Claim Your Free Strategy Call"}
+                {offer.buttonText}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
 
               <div className="text-white/80 text-sm">
-                ⏰ Valid until {new Date(offer.validUntil).toLocaleDateString()} • Limited spots available • Expert advice guaranteed
+                ⏰ Valid until {new Date(offer.validUntil).toLocaleDateString()} • No hidden fees • Professional design
+                guaranteed
               </div>
             </div>
 
@@ -76,11 +74,11 @@ export default function SpecialOfferSection() {
               </div>
               <div className="flex items-center justify-center gap-2">
                 <div className="w-2 h-2 bg-brand-bright-blue rounded-full"></div>
-                <span>Tailored Strategy</span>
+                <span>Custom Design</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <div className="w-2 h-2 bg-brand-bright-blue rounded-full"></div>
-                <span>Actionable Roadmap</span>
+                <span>Mobile Responsive</span>
               </div>
             </div>
           </CardContent>
