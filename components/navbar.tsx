@@ -52,7 +52,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <a href="#home" onClick={(e) => handleNavClick(e, "#home")}>
               <Image
-                src="/Carshait-logo.png"
+                src="/Carshait-logo-white.png"
                 alt="Varshait Infotech Logo"
                 width={160}
                 height={50}
