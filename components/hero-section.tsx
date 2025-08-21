@@ -50,16 +50,15 @@ export default function HeroSection() {
           {/* Main Heading */}
           <div className="space-y-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white tracking-tight">
-              <div className="mb-2 sm:mb-4">Transforming Web Design</div>
+              <div className="mb-2 sm:mb-4">Your Business, Our Smart Solution.</div>
               <div className="mb-2 sm:mb-4">With The</div>
               <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent font-extrabold">
-                Power Of AI
+                Varshait Infotech
               </div>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-normal px-4">
-              Partner with the best web design company in India and embrace the possibilities of tomorrow—today. Let's
-              build something remarkable together.
+              From custom websites to AI automation — we create technology that drives real results.
             </p>
           </div>
 
