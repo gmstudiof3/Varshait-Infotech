@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -30,14 +29,8 @@ export default function ContactSection() {
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       })
 
       if (response.ok) {
@@ -55,19 +48,16 @@ export default function ContactSection() {
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-deep-blue mb-4">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-deep-blue mb-4">Let’s Build Something Great</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to transform your business? Let's discuss how our smart solutions can drive your growth and success.
+            Have a project in mind? Tell us about it, and our team will get back to you within 24 hours with a tailored response.
           </p>
         </div>
 
@@ -82,7 +72,7 @@ export default function ContactSection() {
                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-green-600" />
                   <p className="text-green-800">
-                    Thank you! Your message has been sent successfully. We'll get back to you soon.
+                    Thank you! Your message has been received. Our team will get in touch with you shortly.
                   </p>
                 </div>
               )}
@@ -91,7 +81,7 @@ export default function ContactSection() {
                 <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
                   <AlertCircle className="h-5 w-5 text-red-600" />
                   <p className="text-red-800">
-                    Sorry, there was an error sending your message. Please try again or contact us directly.
+                    Oops! Something went wrong. Please try again, or reach us directly via phone or email.
                   </p>
                 </div>
               )}
@@ -109,7 +99,7 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full"
-                    placeholder="Your full name"
+                    placeholder="Enter your full name"
                     disabled={isSubmitting}
                   />
                 </div>
@@ -125,7 +115,7 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full"
-                    placeholder="your.email@example.com"
+                    placeholder="Enter your business email"
                     disabled={isSubmitting}
                   />
                 </div>
@@ -141,7 +131,7 @@ export default function ContactSection() {
                     onChange={handleChange}
                     rows={5}
                     className="w-full"
-                    placeholder="Tell us about your project and how we can help..."
+                    placeholder="Tell us about your project goals..."
                     disabled={isSubmitting}
                   />
                 </div>
@@ -163,7 +153,7 @@ export default function ContactSection() {
                 <div className="flex items-start gap-4">
                   <Mail className="h-6 w-6 text-brand-bright-blue mt-1" />
                   <div>
-                    <h3 className="font-semibold text-brand-deep-blue mb-1">Email Us</h3>
+                    <h3 className="font-semibold text-brand-deep-blue mb-1">Reach Us by Email</h3>
                     <p className="text-gray-600">{contact.email}</p>
                   </div>
                 </div>
@@ -175,7 +165,7 @@ export default function ContactSection() {
                 <div className="flex items-start gap-4">
                   <Phone className="h-6 w-6 text-brand-bright-blue mt-1" />
                   <div>
-                    <h3 className="font-semibold text-brand-deep-blue mb-1">Call Us</h3>
+                    <h3 className="font-semibold text-brand-deep-blue mb-1">Call Our Team</h3>
                     <p className="text-gray-600">{contact.phone}</p>
                   </div>
                 </div>
@@ -187,7 +177,7 @@ export default function ContactSection() {
                 <div className="flex items-start gap-4">
                   <MapPin className="h-6 w-6 text-brand-bright-blue mt-1" />
                   <div>
-                    <h3 className="font-semibold text-brand-deep-blue mb-1">Visit Us</h3>
+                    <h3 className="font-semibold text-brand-deep-blue mb-1">Our Office</h3>
                     <p className="text-gray-600">{contact.address}</p>
                     <p className="text-gray-600">
                       {contact.city}, {contact.country}
@@ -202,9 +192,9 @@ export default function ContactSection() {
                 <div className="flex items-start gap-4">
                   <MapPin className="h-6 w-6 text-brand-bright-blue mt-1" />
                   <div>
-                    <h3 className="font-semibold text-brand-deep-blue mb-1">We Serve In</h3>
+                    <h3 className="font-semibold text-brand-deep-blue mb-1">We Work With Clients In</h3>
                     <p className="text-gray-600">{contact.serviceAreas.join(" • ")}</p>
-                    <p className="text-gray-600">Global remote services available</p>
+                    <p className="text-gray-600">Serving businesses worldwide with remote collaboration</p>
                   </div>
                 </div>
               </CardContent>
@@ -216,8 +206,8 @@ export default function ContactSection() {
                   <Clock className="h-6 w-6 text-brand-bright-blue mt-1" />
                   <div>
                     <h3 className="font-semibold text-brand-deep-blue mb-1">Business Hours</h3>
-                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM IST</p>
-                    <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM IST</p>
+                    <p className="text-gray-600">Monday – Friday: 9:00 AM – 6:00 PM IST</p>
+                    <p className="text-gray-600">Saturday: 10:00 AM – 4:00 PM IST</p>
                   </div>
                 </div>
               </CardContent>

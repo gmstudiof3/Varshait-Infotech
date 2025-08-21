@@ -4,6 +4,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -19,19 +20,14 @@ export default function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, external?: boolean) => {
     if (external) {
-      // Let the default behavior handle external links
       setIsMobileMenuOpen(false)
       return
     }
-
     e.preventDefault()
     const targetId = href.replace("#", "")
     const targetElement = document.getElementById(targetId)
     if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" })
     }
     setIsMobileMenuOpen(false)
   }
@@ -39,7 +35,6 @@ export default function Navbar() {
   const navLinks = [
     { href: "#services", label: "Services", hasDropdown: true },
     { href: "#industries", label: "Industries", hasDropdown: true },
-    { href: "#work", label: "Technologies", hasDropdown: true },
     { href: "#about", label: "About Us", hasDropdown: true },
     { href: "#work", label: "Our Work", hasDropdown: true },
     { href: "#contact", label: "Contact Us" },
@@ -48,20 +43,21 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-[#0A0B45]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a
-              href="#home"
-              className="text-white font-bold text-xl flex items-center"
-              onClick={(e) => handleNavClick(e, "#home")}
-            >
-              <span className="text-white">Varshait</span>
-              <span className="text-purple-500 ml-1">Infotech</span>
+            <a href="#home" onClick={(e) => handleNavClick(e, "#home")}>
+              <Image
+                src="/Carshait-logo.png"
+                alt="Varshait Infotech Logo"
+                width={160}
+                height={50}
+                priority
+              />
             </a>
           </div>
 
@@ -73,7 +69,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href, link.external)}
-                  className="text-white hover:text-purple-400 transition-colors duration-200 px-3 py-2 text-sm font-medium flex items-center gap-1"
+                  className="text-white hover:text-[#06B6D4] transition-colors duration-200 px-3 py-2 text-sm font-medium flex items-center gap-1"
                 >
                   {link.label}
                   {link.hasDropdown && <ChevronDown size={14} />}
@@ -85,7 +81,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-6 py-2 rounded-full transition-all duration-200 shadow-lg"
+              className="bg-[#06B6D4] hover:bg-cyan-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-200 shadow-lg"
               onClick={() => window.open("https://calendly.com/macgw86/30min", "_blank")}
             >
               Get a Free Quote
@@ -96,7 +92,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white hover:text-brand-bright-blue transition-colors"
+              className="text-white hover:text-[#06B6D4] transition-colors"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -105,20 +101,20 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden brand-deep-blue">
+          <div className="md:hidden bg-[#0A0B45]">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-white hover:text-brand-bright-blue block px-3 py-2 text-base font-medium transition-colors"
+                  className="text-white hover:text-[#06B6D4] block px-3 py-2 text-base font-medium transition-colors"
                   onClick={(e) => handleNavClick(e, link.href, link.external)}
                 >
                   {link.label}
                 </a>
               ))}
               <Button
-                className="brand-bright-blue hover:bg-blue-600 text-white font-semibold w-full mt-4"
+                className="bg-[#06B6D4] hover:bg-cyan-600 text-white font-semibold w-full mt-4"
                 onClick={() => window.open("https://calendly.com/macgw86/30min", "_blank")}
               >
                 Get a Free Quote

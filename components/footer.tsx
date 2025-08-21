@@ -9,7 +9,7 @@ export default function Footer() {
 
   const quickLinks = [
     { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
+    { href: "#about", label: "About Us" },
     { href: "#services", label: "Services" },
     { href: "#work", label: "Our Work" },
     { href: "/blog", label: "Blog" },
@@ -31,7 +31,8 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <h3 className="text-2xl font-bold mb-4">Varshait Infotech</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Transforming businesses through smart technology solutions. Your success is our mission.
+              Driving business growth with smart, customizable technology solutions. 
+              Your vision, our expertise — together we create impact.
             </p>
             <div className="flex items-center gap-2 text-gray-300">
               <Mail className="h-4 w-4" />
@@ -58,7 +59,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Services</h4>
+            <h4 className="text-lg font-semibold mb-4">Our Expertise</h4>
             <ul className="space-y-2">
               {services.slice(0, 6).map((service) => (
                 <li key={service.id}>
@@ -70,7 +71,7 @@ export default function Footer() {
 
           {/* Social Media */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
+            <h4 className="text-lg font-semibold mb-4">Connect With Us</h4>
             <div className="flex gap-4 mb-6">
               {socialLinks.map((social) => (
                 <a
@@ -83,13 +84,17 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-            <p className="text-gray-300 text-sm">Stay updated with our latest projects and tech insights.</p>
+            <p className="text-gray-300 text-sm">
+              Follow us for updates on our latest projects, insights, and innovations.
+            </p>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-300 text-sm">© 2024 Varshait Infotech. All rights reserved.</p>
+            <p className="text-gray-300 text-sm">
+              © {new Date().getFullYear()} Varshait Infotech. All rights reserved.
+            </p>
             <div className="flex gap-6 text-sm">
               <a href="/privacy" className="text-gray-300 hover:text-brand-bright-blue transition-colors">
                 Privacy Policy
